@@ -21,6 +21,9 @@
   --paper: #fffdfb;
   --line: #e7dfec;
   --radius: 24px;
+  --section-space: 64px;
+  --section-inset: calc(var(--section-space) / 2);
+  --wave-height: 40px;
 }
 * {
   box-sizing: border-box;
@@ -153,7 +156,12 @@ summary:focus-visible {
   margin-inline: auto;
 }
 .section {
-  padding-block: 86px;
+  padding-block: var(--section-inset);
+}
+/* Adjacent sections share one gap; inset banners need it on one side. */
+.section.story,
+.section.faq {
+  padding-top: var(--section-space);
 }
 .eyebrow {
   display: block;
@@ -509,6 +517,7 @@ summary:focus-visible {
 }
 .signature {
   padding-top: 48px;
+  padding-bottom: var(--section-space);
 }
 .signature > .section-top {
   display: grid;
@@ -639,7 +648,7 @@ summary:focus-visible {
   min-height: 370px;
   border-radius: 38px 80px 38px 68px;
   background: #ef83ad;
-  margin-bottom: 85px;
+  margin-bottom: var(--section-inset);
   padding: 46px 48px;
   isolation: isolate;
 }
@@ -709,7 +718,11 @@ summary:focus-visible {
   position: relative;
   background: var(--violet);
   color: var(--cream);
-  padding: 100px 0 115px;
+  padding: calc(var(--section-inset) + var(--wave-height)) 0;
+}
+.why-section > .section-wave,
+footer > .section-wave {
+  height: var(--wave-height);
 }
 .why-section h2 {
   font-size: 46px;
@@ -1007,14 +1020,8 @@ summary:focus-visible {
 .empty-products button {
   margin-top: 20px;
 }
-.image-note {
-  font-size: 12px;
-  color: var(--muted);
-  text-align: center;
-  margin-top: 28px;
-}
 .cheese-banner {
-  margin-block: 90px 0;
+  margin-block: var(--section-inset) 0;
   padding: 30px 55px 38px 20px;
   background: #ffe395;
   border-radius: 60px 26px 60px 26px;
@@ -1099,7 +1106,6 @@ summary:focus-visible {
   margin-top: 24px;
 }
 .inspiration {
-  padding-top: 60px;
   background: #fff8f0;
 }
 .ideas-grid {
@@ -1154,7 +1160,7 @@ summary:focus-visible {
   transform: rotate(45deg);
 }
 .business-banner {
-  margin-top: 85px;
+  margin-top: var(--section-inset);
   background: var(--purple);
   color: var(--cream);
   border-radius: 38px 75px 38px 38px;
@@ -1412,7 +1418,7 @@ footer {
   position: relative;
   background: var(--purple);
   color: var(--cream);
-  padding: 95px 0 20px;
+  padding: calc(var(--section-inset) + var(--wave-height)) 0 20px;
 }
 .footer-grid {
   display: grid;
@@ -1655,15 +1661,16 @@ dialog::backdrop {
   }
 }
 @media (max-width: 760px) {
+  :root {
+    --section-space: 40px;
+    --wave-height: 32px;
+  }
   .page-shell {
     margin: 0;
     border-radius: 0;
   }
   .wrap {
     width: calc(100% - 40px);
-  }
-  .section {
-    padding-block: 58px;
   }
   h2 {
     font-size: 43px;
@@ -1878,7 +1885,7 @@ dialog::backdrop {
   .pairing {
     padding: 32px 25px;
     min-height: 520px;
-    margin-bottom: 52px;
+    margin-bottom: var(--section-inset);
     border-radius: 30px 55px 30px 42px;
   }
   .pairing-copy {
@@ -1913,9 +1920,6 @@ dialog::backdrop {
   }
   .pairing-stamp b {
     font-size: 18px;
-  }
-  .why-section {
-    padding: 74px 0 80px;
   }
   .why-section h2 {
     font-size: 37px;
@@ -2020,11 +2024,7 @@ dialog::backdrop {
   .product-details svg {
     width: 16px;
   }
-  .image-note {
-    font-size: 11px;
-  }
   .cheese-banner {
-    margin-top: 60px;
     padding: 20px 24px 36px;
     grid-template-columns: 1fr;
     gap: 0;
@@ -2076,7 +2076,6 @@ dialog::backdrop {
     grid-template-columns: 1fr;
     padding: 35px 28px;
     gap: 35px;
-    margin-top: 55px;
     border-radius: 30px 60px 30px 30px;
   }
   .business-banner h2 {

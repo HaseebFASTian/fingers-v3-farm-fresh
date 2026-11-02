@@ -54,7 +54,7 @@ h2 { font-size: var(--text-heading); line-height: 1.12; }
 }
 .product-pack { font-size: var(--text-control); line-height: 1.5; }
 .product-details { gap: 8px; }
-.image-note,#product-count,.form-note,.form-card small,.saved-product small,.selection-heading button,.site-notification {
+#product-count,.form-note,.form-card small,.saved-product small,.selection-heading button,.site-notification {
   font-size: var(--text-secondary); line-height: 1.6;
 }
 .detail-note { font-size: var(--text-secondary) !important; }

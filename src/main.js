@@ -294,7 +294,7 @@ document.addEventListener("keydown", (event) => {
     menuToggle.focus();
   }
 });
-matchMedia("(min-width: 761px)").addEventListener("change", closeMenu);
+matchMedia("(min-width: 901px)").addEventListener("change", closeMenu);
 
 const signatureTrack = $("#signature-track");
 if (signatureTrack) {

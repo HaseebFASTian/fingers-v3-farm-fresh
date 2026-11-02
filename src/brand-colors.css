@@ -455,3 +455,31 @@ dialog::backdrop {
     border-color: #39749b;
   }
 }
+
+/* A fine contour keeps the original blue wordmark clear on the navy hero. */
+.site-header {
+  background: transparent;
+  border-bottom: 1px solid #ffffff24;
+}
+.brand {
+  background: transparent;
+}
+.brand img {
+  filter: drop-shadow(1px 0 0 var(--cream)) drop-shadow(-1px 0 0 var(--cream))
+    drop-shadow(0 1px 0 var(--cream)) drop-shadow(0 -1px 0 var(--cream));
+}
+.saved-link,
+.menu-toggle {
+  border: 1px solid #ffffff38;
+  border-radius: 50%;
+}
+.saved-link:hover,
+.menu-toggle:hover {
+  background: #ffffff14;
+}
+@media (max-width: 900px) {
+  #navigation {
+    background: var(--brand-navy);
+    border: 1px solid #39749b;
+  }
+}

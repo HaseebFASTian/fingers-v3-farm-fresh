@@ -47,10 +47,11 @@ h2 { font-size: var(--text-heading); line-height: 1.12; }
 }
 .reason-grid p { font-size: var(--text-control); line-height: 1.6; }
 .reason-card .reason-copy h3 { font: 600 clamp(1.375rem,1rem + .65vw,1.625rem)/1.25 Outfit,sans-serif; }
-.category-grid h3 { font-size: 1.625rem; line-height: 1.2; }
+.category-grid h3 { font-size: 2rem; line-height: 1.15; }
+.category-kicker { font-size: .75rem; }
 .product-category { font-size: var(--text-caption); line-height: 1.5; }
 .product-body h3 {
-  font-size: var(--text-card-heading); line-height: 1.3; min-height: 2.6em; margin-bottom: 16px;
+  font-size: var(--text-card-heading); line-height: 1.3; min-height: 0; margin-bottom: 10px;
 }
 .product-pack { font-size: var(--text-control); line-height: 1.5; }
 .product-details { gap: 8px; }
@@ -101,13 +102,9 @@ h2 { font-size: var(--text-heading); line-height: 1.12; }
   .pairing h2,.pairing p { max-width:none; }
   .pairing>img { height:270px; }
   .pairing-stamp { font-size:var(--text-caption); }
-  .category-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .category-grid a,.category-grid a:nth-child(4),.category-grid a:nth-child(5) { grid-column:auto; }
-  .category-grid a:last-child { grid-column:1/-1; }
-  .category-grid a:last-child img { height:130px; }
-  .category-grid h3 { font-size:1.5rem; }
+  .category-grid h3 { font-size:1.875rem; }
   .product-pack { font-size:var(--text-secondary); }
-  .product-details { padding:10px; }
+  .product-details { padding:12px 0 0; }
   .save-product { min-width:40px; min-height:40px; }
   .faq-list summary { font-size:1.125rem; }
   .footer-grid>div:first-child { gap:18px; }

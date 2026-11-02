@@ -797,38 +797,69 @@ footer > .section-wave {
 }
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
 }
 .category-grid a {
-  border-radius: 24px;
-  padding: 15px 18px 20px;
-  background: #e3f4fc;
-  transition: transform 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 26px 12px 10px;
+  text-align: center;
+  isolation: isolate;
+  transition: transform .25s ease;
 }
-.category-grid a:hover {
-  transform: translateY(-5px);
-}
-.category-grid .cat-yogurt {
-  background: #fce1ed;
-}
-.category-grid .cat-cheese {
-  background: #ffe8b6;
-}
-.category-grid .cat-butter {
-  background: #fff2cd;
-}
-.category-grid .cat-ghee {
-  background: #e4efd4;
-}
-.category-grid img {
-  height: 160px;
-  width: 100%;
-  object-fit: contain;
+.category-kicker {
+  display: block;
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 650;
+  letter-spacing: .065em;
 }
 .category-grid h3 {
-  font-size: 25px;
-  margin-top: 10px;
+  margin: 8px 0 0;
+}
+.category-art {
+  position: relative;
+  display: block;
+  height: 206px;
+  margin-top: 16px;
+}
+.category-art::before {
+  content: "";
+  position: absolute;
+  inset: 20% -15% -26%;
+  border-radius: 50% 50% 0 0;
+  z-index: -1;
+}
+.category-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: rotate(-5deg);
+  transition: transform .3s ease;
+}
+.cat-butter .category-art img { transform: rotate(5deg); }
+.cat-ghee .category-art img { transform: rotate(3deg); }
+.category-duo img {
+  width: 78%;
+  height: 86%;
+  inset: 0 0 auto auto;
+  transform: rotate(9deg);
+}
+.category-duo img + img {
+  inset: auto auto 0 -7%;
+  width: 88%;
+  height: 88%;
+  transform: rotate(-8deg);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .category-grid a:hover { transform: translateY(-4px); }
+  .category-grid a:hover img { transform: rotate(0); }
 }
 .catalogue-section {
   background: #f8f4fb;
@@ -900,8 +931,9 @@ footer > .section-wave {
   min-width: 0;
   background: var(--paper);
   border: 1px solid #e8dfed;
-  border-radius: 24px;
-  padding: 8px;
+  border-radius: 28px;
+  padding: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   transition:
@@ -914,37 +946,55 @@ footer > .section-wave {
 }
 .product-photo {
   position: relative;
-  aspect-ratio: 1.15;
-  background: #f4e9f4;
-  border-radius: 18px;
-  display: grid;
-  place-items: center;
+  aspect-ratio: 1;
+  isolation: isolate;
 }
-.product-card[data-category="Milk"] .product-photo {
-  background: #e7f1fa;
+.product-photo::before {
+  content: "";
+  position: absolute;
+  inset: 31% 7% 7%;
+  border-radius: 48% 52% 43% 57%;
+  pointer-events: none;
 }
-.product-card[data-category="Cheese"] .product-photo {
-  background: #fff0d6;
+.product-preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
 }
-.product-card[data-category="Butter"] .product-photo {
-  background: #faf1ce;
+.product-preview:focus-visible {
+  outline-offset: -5px;
+  border-radius: 27px 27px 0 0;
 }
-.product-card[data-category="Ghee"] .product-photo {
-  background: #eaf1e1;
+.product-preview .product-category {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  right: 62px;
 }
-.product-photo > img {
+.product-preview img {
   width: 100%;
   height: 100%;
   position: absolute;
+  inset: 0;
   object-fit: contain;
-  padding: 18px;
+  padding: 50px 10px 10px;
+  transition: transform .3s ease;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .product-preview:hover img { transform: translateY(-3px) scale(1.025); }
 }
 .save-product {
   position: absolute;
-  right: 9px;
-  top: 9px;
-  width: 42px;
-  height: 42px;
+  right: 12px;
+  top: 12px;
+  width: 44px;
+  height: 44px;
   border: 1px solid #e8dce9;
   border-radius: 50%;
   background: var(--paper);
@@ -965,7 +1015,7 @@ footer > .section-wave {
   fill: var(--purple);
 }
 .product-body {
-  padding: 16px 10px 8px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -979,13 +1029,12 @@ footer > .section-wave {
 }
 .product-body h3 {
   font: 600 18px/1.3 Outfit;
-  margin: 5px 0 16px;
-  min-height: 47px;
+  margin: 0 0 10px;
 }
 .product-pack {
   font-size: 14px;
   color: var(--muted);
-  margin: 0 0 16px;
+  margin: 0 0 20px;
   margin-top: auto;
 }
 .product-details {
@@ -995,17 +1044,18 @@ footer > .section-wave {
   justify-content: space-between;
   gap: 8px;
   border: 0;
-  border-radius: 12px;
-  background: #eee5f7;
-  color: var(--purple);
+  border-top: 1px solid;
+  border-radius: 0;
+  background: transparent;
   font-size: 14px;
   font-weight: 600;
   min-height: 45px;
-  padding: 10px 15px;
+  padding: 14px 0 0;
+  margin-top: auto;
 }
 .product-details:hover {
-  background: var(--purple);
-  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .product-details svg {
   width: 18px;
@@ -1644,21 +1694,20 @@ dialog::backdrop {
   .product-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .category-grid img {
-    height: 130px;
-  }
   .footer-grid {
     gap: 24px;
   }
   .category-grid {
     gap: 10px;
   }
-  .category-grid a {
-    padding: 10px 12px 16px;
-  }
-  .category-grid h3 {
-    font-size: 23px;
-  }
+  .category-grid a { padding-inline: 8px; }
+  .category-art { height: 168px; }
+}
+@media (min-width: 761px) and (max-width: 1000px) {
+  .category-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .category-grid a { grid-column: span 2; }
+  .category-grid a:nth-child(n + 4) { grid-column: span 3; }
+  .category-art { height: 190px; }
 }
 @media (max-width: 760px) {
   :root {
@@ -1940,23 +1989,30 @@ dialog::backdrop {
     font-size: 15px;
   }
   .category-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
   .category-grid a {
-    grid-column: span 2;
-    padding: 12px 12px 16px;
+    padding: 22px 8px 8px;
+    border-radius: 24px;
   }
-  .category-grid a:nth-child(4),
-  .category-grid a:nth-child(5) {
-    grid-column: span 3;
+  .category-grid a:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: left;
+    align-items: end;
+    padding: 12px 16px 12px 24px;
   }
-  .category-grid img {
-    height: 110px;
+  .category-grid a:last-child h3 { align-self: start; }
+  .category-grid a:last-child .category-art {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    margin: 0;
   }
-  .category-grid h3 {
-    font-size: 22px;
-  }
+  .category-art { height: 164px; margin-top: 12px; }
+  .category-kicker { font-size: 10px; letter-spacing: .04em; }
   .catalogue-toolbar {
     gap: 16px;
     margin-top: 25px;
@@ -1981,43 +2037,39 @@ dialog::backdrop {
     gap: 16px 10px;
   }
   .product-card {
-    padding: 6px;
-    border-radius: 20px;
+    border-radius: 22px;
   }
   .product-photo {
-    border-radius: 15px;
-    aspect-ratio: 1;
+    aspect-ratio: .82;
   }
-  .product-photo > img {
-    padding: 12px 6px;
+  .product-preview img {
+    padding: 48px 4px 7px;
   }
+  .product-preview .product-category { top: 21px; left: 12px; right: 52px; }
   .save-product {
-    right: 5px;
-    top: 5px;
-    width: 36px;
-    height: 36px;
+    right: 7px;
+    top: 9px;
+    width: 44px;
+    height: 44px;
   }
   .save-product svg {
     width: 17px;
   }
   .product-body {
-    padding: 12px 7px 7px;
+    padding: 16px 12px;
   }
   .product-category {
     font-size: 9px;
   }
   .product-body h3 {
-    font-size: 16px;
-    min-height: 42px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   .product-pack {
     font-size: 12px;
     margin-bottom: 12px;
   }
   .product-details {
-    font-size: 12px;
-    padding: 9px 10px;
+    padding: 12px 0 0;
     min-height: 44px;
     gap: 4px;
   }
@@ -2198,9 +2250,6 @@ dialog::backdrop {
   .signature-track {
     grid-auto-columns: 32%;
   }
-  .category-grid img {
-    height: 150px;
-  }
   .product-grid {
     gap: 20px;
   }
@@ -2255,12 +2304,6 @@ dialog::backdrop {
   }
   .product-grid {
     gap: 12px 8px;
-  }
-  .product-body {
-    padding-inline: 5px;
-  }
-  .product-details {
-    padding-inline: 8px;
   }
   .product-details svg {
     width: 14px;

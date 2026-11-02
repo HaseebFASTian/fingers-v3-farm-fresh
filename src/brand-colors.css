@@ -206,23 +206,26 @@ body {
 
 .category-grid a,
 .category-grid .cat-milk {
-  background: #e1eff7;
+  background: #b9dfee;
 }
 .category-grid .cat-yogurt {
-  background: #dfedcf;
+  background: #cce6b2;
 }
 .category-grid .cat-cheese {
-  background: #ffe8b6;
+  background: #ffe07c;
 }
 .category-grid .cat-butter {
-  background: #fff2cd;
+  background: #f3edc9;
 }
 .category-grid .cat-ghee {
-  background: #e4efd4;
+  background: #d5e5b9;
 }
-.category-grid h3 {
+.category-grid h3,
+.category-kicker {
   color: var(--brand-navy);
 }
+.category-art::before,
+.product-photo::before { background: #ffffff42; }
 .catalogue-section {
   background: #f2f6ef;
 }
@@ -248,28 +251,19 @@ body {
 }
 .product-card {
   border-color: #dce5db;
+  --product-stage: #f3edc9;
 }
 .product-card:hover {
   box-shadow: 0 10px 24px #0c3d4a14;
 }
-.product-photo,
-.product-card[data-category="Yogurt"] .product-photo {
-  background: #e6efdd;
-}
-.product-card[data-category="Milk"] .product-photo {
-  background: #e7f1fa;
-}
-.product-card[data-category="Cheese"] .product-photo {
-  background: #fff0d6;
-}
-.product-card[data-category="Butter"] .product-photo {
-  background: #faf1ce;
-}
-.product-card[data-category="Ghee"] .product-photo {
-  background: #eaf1e1;
-}
+.product-photo { background: var(--product-stage); }
+.product-card:is([data-id="farm-fresh-milk-pouch"],[data-id="farm-fresh-greek-yogurt"],[data-id="farm-fresh-unsalted-butter"],[data-id="farm-fresh-mozzarella-shredded"],[data-id="farm-fresh-cheddar-slices"]) { --product-stage: #b9dfee; }
+.product-card:is([data-id="farm-fresh-strawberry-yogurt"],[data-id="farm-fresh-jalapeno-cheese"],[data-id="farm-fresh-green-chilli-cheese"],[data-id="farm-fresh-salted-butter"],[data-id="farm-fresh-desi-ghee"]) { --product-stage: #cce6b2; }
+.product-card:is([data-id="farm-fresh-mango-yogurt"],[data-id="farm-fresh-burger-slices"],[data-id="farm-fresh-pizza-cheese"]) { --product-stage: #ffe07c; }
+.product-card:is([data-id="farm-fresh-garlic-herb-cheese"],[data-id="farm-fresh-red-chilli-cheese"]) { --product-stage: #eee0c6; }
+.product-card:is([data-id="farm-fresh-bakery-butter"],[data-id="farm-fresh-dairy-butter"]) { --product-stage: #c5ded8; }
 .save-product {
-  border-color: #d7e3d6;
+  border-color: transparent;
   color: var(--brand-green);
   background: var(--paper);
 }
@@ -281,18 +275,19 @@ body {
   fill: var(--brand-green);
 }
 .product-category {
-  color: var(--brand-green);
+  color: var(--brand-navy);
 }
 .product-body h3 {
   color: var(--brand-navy);
 }
 .product-details {
-  background: #e5eff7;
+  background: transparent;
   color: var(--brand-navy);
+  border-top-color: #dce5db;
 }
 .product-details:hover {
-  background: var(--brand-navy);
-  color: var(--cream);
+  background: transparent;
+  color: var(--brand-green);
 }
 .empty-products {
   border-color: #adc4ac;

@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#073a70" />
+    <title>Farm Fresh — A little fresh. A lot of happy.</title>
+    <meta
+      name="description"
+      content="Meet the Farm Fresh family: milk, yogurt, cheese, butter and desi ghee. Explore our products, choose your pack and start an enquiry with 5 Fingers Dairy."
+    />
+    <link rel="canonical" href="https://fingers-v3-farm-fresh.pages.dev/" />
+    <meta
+      property="og:title"
+      content="Farm Fresh — Everyday goodness, a little more delicious."
+    />
+    <meta
+      property="og:description"
+      content="Discover milk, yogurt, cheese, butter and desi ghee from the 5 Fingers family."
+    />
+    <meta
+      property="og:image"
+      content="https://fingers-v3-farm-fresh.pages.dev/assets/breakfast-story.webp"
+    />
+    <link rel="icon" href="/assets/logo.webp" />
+    <link
+      rel="preload"
+      href="/fonts/chewy.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/outfit-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/brand-colors.css" />
+    <link rel="stylesheet" href="/src/hero-layout.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="arrow" viewBox="0 0 24 24">
+        <path d="M4 12h15m-6-6 6 6-6 6" />
+      </symbol>
+      <symbol id="heart" viewBox="0 0 24 24">
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+        />
+      </symbol>
+      <symbol id="sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+        />
+      </symbol>
+      <symbol id="drop" viewBox="0 0 24 24">
+        <path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13Z" />
+      </symbol>
+      <symbol id="box" viewBox="0 0 24 24">
+        <path
+          d="m12 2 9 5v10l-9 5-9-5V7l9-5Zm0 10 9-5M3 7l9 5m0 0v10M7.5 4.5l9 5V15"
+        />
+      </symbol>
+      <symbol id="leaf" viewBox="0 0 24 24">
+        <path d="M20 3c-14-2-20 10-11 15 8 4 13-6 11-15ZM4 21 16 9" />
+      </symbol>
+      <symbol id="search" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <path d="m16 16 5 5" />
+      </symbol>
+      <symbol id="sparkle" viewBox="0 0 24 24">
+        <path d="m12 1 3.5 7.5L23 12l-7.5 3.5L12 23l-3.5-7.5L1 12l7.5-3.5Z" />
+      </symbol>
+      <symbol id="wave" viewBox="0 0 1440 100">
+        <path
+          d="M0 45C90 5 130 110 250 60S400 15 500 55s160 25 230-15 120 60 220 30 150-65 250-10 180 15 240-20V100H0Z"
+        />
+      </symbol>
+    </svg>
+    <div class="page-shell">
+      <main id="main">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+          <header class="site-header wrap">
+            <a class="brand" href="#home" aria-label="Farm Fresh home"
+              ><img
+                src="/assets/logo.webp"
+                width="110"
+                height="100"
+                alt="Farm Fresh"
+            /></a>
+            <nav id="navigation" aria-label="Main navigation">
+              <a href="#home">Home</a><a href="#about">Our story</a
+              ><a href="#catalogue">Our products</a
+              ><a href="#inspiration">Fresh ideas</a
+              ><a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+              <a
+                class="saved-link"
+                href="#contact"
+                aria-label="Your enquiry selection"
+                ><svg aria-hidden="true"><use href="#heart" /></svg
+                ><span id="saved-count">0</span></a
+              ><a class="button yellow header-cta" href="#catalogue"
+                >Explore our range
+                <svg aria-hidden="true"><use href="#arrow" /></svg></a
+              ><button
+                class="menu-toggle"
+                aria-controls="navigation"
+                aria-expanded="false"
+                aria-label="Open navigation"
+              >
+                <span></span><span></span><span></span>
+              </button>
+            </div>
+          </header>
+          <div class="hero-inner wrap">
+            <div class="hero-copy">
+              <span class="eyebrow light">A HAPPY LITTLE PART OF YOUR DAY</span>
+              <h1 id="hero-title">
+                Farm<br /><span>Fresh.</span
+                ><svg aria-hidden="true" class="title-spark">
+                  <use href="#sparkle" />
+                </svg>
+              </h1>
+              <h2>Everyday goodness.<br />A little more delicious.</h2>
+              <p>
+                From the first sip of milk to that last spoonful of yogurt. Make
+                room for your everyday favourites.
+              </p>
+              <a class="button pink" href="#catalogue"
+                >Find your favourite
+                <span class="button-circle"
+                  ><svg aria-hidden="true"><use href="#arrow" /></svg></span></a
+              ><a class="family-link" href="https://fingers-v3.pages.dev/"
+                >Part of the <strong>5 Fingers family</strong> ↗</a
+              >
+            </div>
+            <div class="hero-visual">
+              <span class="hero-blob"></span><span class="hero-sun"></span
+              ><img
+                class="hero-product"
+                src="/assets/hero-mango.webp"
+                alt="Mango yogurt serving with a Farm Fresh Mango Yogurt 250 g tub"
+                width="1200"
+                height="1200"
+                fetchpriority="high"
+              />
+              <div class="hero-tag">
+                <svg aria-hidden="true"><use href="#heart" /></svg
+                ><span>A spoonful<br /><strong>of happy</strong></span>
+              </div>
+              <div class="hero-tag second">
+                <svg aria-hidden="true"><use href="#sun" /></svg
+                ><span>Made for<br /><strong>everyday moments</strong></span>
+              </div>
+              <span class="serving-note">Serving inspiration</span
+              ><svg aria-hidden="true" class="hero-star">
+                <use href="#sparkle" />
+              </svg>
+            </div>
+          </div>
+          <svg
+            class="section-wave"
+            preserveAspectRatio="none"
+            viewBox="0 0 1440 100"
+            aria-hidden="true"
+          >
+            <use href="#wave" />
+          </svg>
+        </section>
+        <section
+          class="signature section wrap"
+          id="favourites"
+          aria-labelledby="favourites-title"
+        >
+          <div class="section-top">
+            <div>
+              <span class="eyebrow">A FLAVOUR FOR YOUR MOOD</span>
+              <h2 id="favourites-title">
+                Our everyday<br /><span class="pink-text">happy makers.</span>
+              </h2>
+              <p>
+                Creamy, fruity or simply classic.<br />Which one feels like you?
+              </p>
+            </div>
+            <div class="carousel-buttons">
+              <button
+                id="signature-prev"
+                class="round-button"
+                aria-label="Previous favourites"
+              >
+                ←</button
+              ><button
+                id="signature-next"
+                class="round-button"
+                aria-label="Next favourites"
+              >
+                →
+              </button>
+            </div>
+          </div>
+          <div class="signature-track" id="signature-track">
+            <a
+              class="signature-card strawberry"
+              href="#catalogue"
+              data-filter-link="Yogurt"
+              ><div>
+                <span>THE BERRY ONE</span
+                ><img
+                  src="/assets/products/farm-fresh-strawberry-yogurt.webp"
+                  width="768"
+                  height="768"
+                  alt="Farm Fresh Strawberry Yogurt 250 g"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Strawberry<br />sweetness</h3>
+              <p>Strawberry Yogurt · 250 g</p></a
+            >
+            <a
+              class="signature-card mango"
+              href="#catalogue"
+              data-filter-link="Yogurt"
+              ><div>
+                <span>A LITTLE SUNSHINE</span
+                ><img
+                  src="/assets/products/farm-fresh-mango-yogurt.webp"
+                  width="768"
+                  height="768"
+                  alt="Farm Fresh Mango Yogurt 250 g"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Mango<br />magic</h3>
+              <p>Mango Yogurt · 250 g</p></a
+            >
+            <a
+              class="signature-card greek"
+              href="#catalogue"
+              data-filter-link="Yogurt"
+              ><div>
+                <span>KEEP IT CREAMY</span
+                ><img
+                  src="/assets/products/farm-fresh-greek-yogurt.webp"
+                  width="768"
+                  height="768"
+                  alt="Farm Fresh Greek Yogurt 250 g"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Go a little<br />Greek</h3>
+              <p>Greek Yogurt · 250 g</p></a
+            >
+            <a
+              class="signature-card natural"
+              href="#catalogue"
+              data-filter-link="Yogurt"
+              ><div>
+                <span>THE SIMPLE PLEASURE</span
+                ><img
+                  src="/assets/products/farm-fresh-natural-yogurt.webp"
+                  width="768"
+                  height="768"
+                  alt="Farm Fresh Natural Yogurt 250 g"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Simply<br />natural</h3>
+              <p>Natural Yogurt · 250 g</p></a
+            >
+            <a
+              class="signature-card milky"
+              href="#catalogue"
+              data-filter-link="Milk"
+              ><div>
+                <span>THE EVERYDAY ESSENTIAL</span
+                ><img
+                  src="/assets/products/farm-fresh-milk-pouch.webp"
+                  width="768"
+                  height="768"
+                  alt="Farm Fresh Milk Pouch 1 L"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Milky<br />mornings</h3>
+              <p>Milk Pouch · 1 L</p></a
+            ><a
+              class="signature-card sweet"
+              href="#catalogue"
+              data-filter-link="Yogurt"
+              ><div>
+                <span>A SWEETER SPOONFUL</span
+                ><img
+                  src="/assets/products/farm-fresh-sweet-yogurt.webp"
+                  width="768"
+                  height="768"
+                  alt="Farm Fresh Sweet Yogurt 400 g"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Sweet<br />little moments</h3>
+              <p>Sweet Yogurt · 400 g</p></a
+            >
+          </div>
+        </section>
+        <section class="pairing wrap" aria-labelledby="pairing-title">
+          <div class="pairing-copy">
+            <span class="eyebrow">GOOD THINGS GO TOGETHER</span>
+            <h2 id="pairing-title">Pick a flavour.<br />Share a smile.</h2>
+            <p>
+              A berry-loving best friend? A mango fan in the family?<br />There's
+              room at the table for both.
+            </p>
+            <a class="button purple" href="#catalogue" data-filter-link="Yogurt"
+              >Meet the yogurt range
+              <svg aria-hidden="true"><use href="#arrow" /></svg
+            ></a>
+          </div>
+          <img
+            src="/assets/pairing-yogurts.webp"
+            alt="Strawberry and mango yogurt serving ideas with Farm Fresh tubs"
+            width="1400"
+            height="1000"
+            loading="lazy"
+          /><span class="pairing-stamp"
+            >Happiness<br />by the<br /><b>spoonful!</b></span
+          >
+        </section>
+        <section class="why-section" aria-labelledby="why-title">
+          <svg
+            class="section-wave top-wave"
+            preserveAspectRatio="none"
+            viewBox="0 0 1440 100"
+            aria-hidden="true"
+          >
+            <use href="#wave" />
+          </svg>
+          <div class="wrap">
+            <span class="eyebrow light">LITTLE THINGS. LOTS TO LOVE.</span>
+            <h2 id="why-title">Fits right into your day.</h2>
+            <div class="reason-grid">
+              <div>
+                <svg aria-hidden="true"><use href="#drop" /></svg>
+                <h3>Your dairy essentials</h3>
+                <p>Milk, yogurt and more for the everyday table.</p>
+              </div>
+              <div>
+                <svg aria-hidden="true"><use href="#sun" /></svg>
+                <h3>A taste for every mood</h3>
+                <p>From simple classics to fruity favourites.</p>
+              </div>
+              <div>
+                <svg aria-hidden="true"><use href="#box" /></svg>
+                <h3>A pack that fits</h3>
+                <p>Explore sizes for your home or business.</p>
+              </div>
+              <div>
+                <svg aria-hidden="true"><use href="#heart" /></svg>
+                <h3>One familiar family</h3>
+                <p>Farm Fresh, a brand of 5 Fingers Dairy.</p>
+              </div>
+            </div>
+          </div>
+          <svg
+            class="section-wave"
+            preserveAspectRatio="none"
+            viewBox="0 0 1440 100"
+            aria-hidden="true"
+          >
+            <use href="#wave" />
+          </svg>
+        </section>
+        <section
+          class="section wrap categories"
+          aria-labelledby="categories-title"
+        >
+          <div class="center-heading">
+            <span class="eyebrow">FROM BREAKFAST TO YOUR MIDNIGHT SNACK</span>
+            <h2 id="categories-title">
+              A whole world of <span class="pink-text">goodness.</span>
+            </h2>
+            <p>Five delicious ways to fill your day.</p>
+          </div>
+          <div class="category-grid">
+            <a href="#catalogue" data-filter-link="Milk" class="cat-milk"
+              ><img
+                src="/assets/products/farm-fresh-milk-pouch.webp"
+                alt=""
+                width="768"
+                height="768"
+                loading="lazy"
+              />
+              <h3>Milk <span>↗</span></h3></a
+            ><a href="#catalogue" data-filter-link="Yogurt" class="cat-yogurt"
+              ><img
+                src="/assets/products/farm-fresh-strawberry-yogurt.webp"
+                alt=""
+                width="768"
+                height="768"
+                loading="lazy"
+              />
+              <h3>Yogurt <span>↗</span></h3></a
+            ><a href="#catalogue" data-filter-link="Cheese" class="cat-cheese"
+              ><img
+                src="/assets/products/farm-fresh-cheddar-slices.webp"
+                alt=""
+                width="768"
+                height="768"
+                loading="lazy"
+              />
+              <h3>Cheese <span>↗</span></h3></a
+            ><a href="#catalogue" data-filter-link="Butter" class="cat-butter"
+              ><img
+                src="/assets/products/farm-fresh-unsalted-butter.webp"
+                alt=""
+                width="768"
+                height="768"
+                loading="lazy"
+              />
+              <h3>Butter <span>↗</span></h3></a
+            ><a href="#catalogue" data-filter-link="Ghee" class="cat-ghee"
+              ><img
+                src="/assets/products/farm-fresh-desi-ghee.webp"
+                alt=""
+                width="768"
+                height="768"
+                loading="lazy"
+              />
+              <h3>Desi ghee <span>↗</span></h3></a
+            >
+          </div>
+        </section>
+        <section
+          class="catalogue-section section"
+          id="catalogue"
+          aria-labelledby="catalogue-title"
+        >
+          <div class="wrap">
+            <div class="center-heading">
+              <span class="eyebrow">MEET THE FARM FRESH FAMILY</span>
+              <h2 id="catalogue-title">
+                Find your next <span class="pink-text">favourite.</span>
+              </h2>
+              <p>
+                Explore the range, choose your pack and save it to your enquiry.
+              </p>
+            </div>
+            <div class="catalogue-toolbar">
+              <div
+                id="category-filters"
+                role="group"
+                aria-label="Filter products by category"
+              >
+                <button data-category="All" aria-pressed="true">
+                  All products</button
+                ><button data-category="Milk" aria-pressed="false">Milk</button
+                ><button data-category="Yogurt" aria-pressed="false">
+                  Yogurt</button
+                ><button data-category="Cheese" aria-pressed="false">
+                  Cheese</button
+                ><button data-category="Butter" aria-pressed="false">
+                  Butter</button
+                ><button data-category="Ghee" aria-pressed="false">
+                  Desi ghee
+                </button>
+              </div>
+              <label class="search-label" for="product-search"
+                ><svg aria-hidden="true"><use href="#search" /></svg
+                ><span class="sr-only">Search Farm Fresh products</span
+                ><input
+                  id="product-search"
+                  type="search"
+                  placeholder="Find a product or pack…"
+                  maxlength="120"
+              /></label>
+            </div>
+            <p id="product-count" class="product-count" aria-live="polite"></p>
+            <div id="product-grid" class="product-grid"></div>
+            <noscript
+              ><p>
+                Enable JavaScript to browse products, or
+                <a href="/downloads/catalogue.pdf"
+                  >download the product catalogue</a
+                >.
+              </p></noscript
+            >
+            <p class="image-note">
+              Catalogue-based pack illustrations. Packaging may vary by size.
+            </p>
+          </div>
+        </section>
+        <section class="cheese-banner wrap" aria-labelledby="cheese-title">
+          <div class="cheese-art">
+            <span class="cheese-orbit"></span
+            ><img
+              src="/assets/products/farm-fresh-burger-slices.webp"
+              alt="Farm Fresh Burger Cheese Slices"
+              width="768"
+              height="768"
+              loading="lazy"
+            /><img
+              src="/assets/products/farm-fresh-pizza-cheese.webp"
+              alt="Farm Fresh Pizza Cheese Shredded"
+              width="768"
+              height="768"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <span class="eyebrow">FOR YOUR NEXT “JUST ONE MORE BITE”</span>
+            <h2 id="cheese-title">
+              Say cheese.<br />Mean <span>delicious.</span>
+            </h2>
+            <p>
+              Burger nights. Toasted sandwiches. Homemade pizza. Find your
+              kitchen's next favourite, from cheese slices to shredded cheese
+              and flavourful varieties.
+            </p>
+            <a class="button purple" href="#catalogue" data-filter-link="Cheese"
+              >Find your cheesy favourite
+              <svg aria-hidden="true"><use href="#arrow" /></svg
+            ></a>
+          </div>
+        </section>
+        <section
+          class="section wrap story"
+          id="about"
+          aria-labelledby="story-title"
+        >
+          <div class="story-photo">
+            <img
+              src="/assets/breakfast-story.webp"
+              alt="A breakfast table with Farm Fresh dairy, milk, toast and fruit"
+              width="1400"
+              height="1050"
+              loading="lazy"
+            /><span class="story-stamp"
+              >From our family<br /><strong>to your table.</strong></span
+            >
+          </div>
+          <div class="story-copy">
+            <span class="eyebrow">HELLO, WE'RE FARM FRESH</span>
+            <h2 id="story-title">
+              A little fresh.<br /><span class="pink-text"
+                >A lot of happy.</span
+              >
+            </h2>
+            <p>
+              Some of the best moments happen around a table. A cup of chai, a
+              breakfast shared, a snack you don't want to share.
+            </p>
+            <p>
+              Part of 5 Fingers Dairy Pvt. Ltd., Farm Fresh brings together
+              milk, yogurt, butter, desi ghee and a colourful cheese range for
+              these everyday moments.
+            </p>
+            <p>
+              Whether you're filling the family fridge or choosing products for
+              your business, explore the range and find the pack that works for
+              you.
+            </p>
+            <a class="text-link" href="https://fingers-v3.pages.dev/#about"
+              >Meet the 5 Fingers family
+              <svg aria-hidden="true"><use href="#arrow" /></svg
+            ></a>
+          </div>
+        </section>
+        <section
+          class="section inspiration"
+          id="inspiration"
+          aria-labelledby="inspiration-title"
+        >
+          <div class="wrap">
+            <div class="center-heading">
+              <span class="eyebrow">A LITTLE INSPIRATION FOR YOUR TABLE</span>
+              <h2 id="inspiration-title">
+                Make a moment <span class="pink-text">of it.</span>
+              </h2>
+              <p>Simple serving ideas, with your favourites at the heart.</p>
+            </div>
+            <div class="ideas-grid">
+              <article>
+                <img
+                  src="/assets/idea-yogurt.webp"
+                  alt="A bowl of yogurt with strawberries"
+                  width="800"
+                  height="650"
+                  loading="lazy"
+                />
+                <div>
+                  <span class="eyebrow">THE HAPPY BREAKFAST</span>
+                  <h3>Build your own yogurt bowl</h3>
+                  <p>Start simple. Make it your own.</p>
+                  <details>
+                    <summary>Try this idea <span>+</span></summary>
+                    <p>
+                      Spoon yogurt into a bowl. Add sliced seasonal fruit, then
+                      finish with a little granola or chopped nuts. Enjoy it as
+                      soon as it's prepared.
+                    </p>
+                    <a href="#catalogue" data-filter-link="Yogurt"
+                      >Explore yogurt →</a
+                    >
+                  </details>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="/assets/idea-cheese.webp"
+                  alt="Cheese slices ready for sandwiches"
+                  width="800"
+                  height="650"
+                  loading="lazy"
+                />
+                <div>
+                  <span class="eyebrow">THE COMFORT BITE</span>
+                  <h3>Make it a cheesy sandwich</h3>
+                  <p>A golden little excuse for a break.</p>
+                  <details>
+                    <summary>Try this idea <span>+</span></summary>
+                    <p>
+                      Layer cheese slices between your favourite bread. Lightly
+                      butter the outside and toast in a pan until golden,
+                      turning carefully. Serve warm.
+                    </p>
+                    <a href="#catalogue" data-filter-link="Cheese"
+                      >Explore cheese →</a
+                    >
+                  </details>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="/assets/idea-milk.webp"
+                  alt="Fresh milk in a glass beside a jug"
+                  width="800"
+                  height="650"
+                  loading="lazy"
+                />
+                <div>
+                  <span class="eyebrow">THE MORNING RITUAL</span>
+                  <h3>Take a proper chai break</h3>
+                  <p>Sometimes the best plan is a cuppa.</p>
+                  <details>
+                    <summary>Try this idea <span>+</span></summary>
+                    <p>
+                      Make your usual tea with milk, then add cardamom or ginger
+                      to taste. Pour into your favourite cup and share a quiet
+                      moment.
+                    </p>
+                    <a href="#catalogue" data-filter-link="Milk"
+                      >Explore milk →</a
+                    >
+                  </details>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section
+          class="business-banner wrap"
+          id="business"
+          aria-labelledby="business-title"
+        >
+          <div>
+            <span class="eyebrow light"
+              >FOR YOUR SHELVES. FOR YOUR KITCHEN.</span
+            >
+            <h2 id="business-title">
+              Good food.<br /><span>Great company.</span>
+            </h2>
+            <p>
+              Retailer, distributor, café or restaurant? Let's talk about the
+              Farm Fresh products and pack formats that fit your business.
+            </p>
+            <a class="button yellow" href="#contact"
+              >Let's work together
+              <svg aria-hidden="true"><use href="#arrow" /></svg
+            ></a>
+          </div>
+          <div class="business-notes">
+            <div>
+              <svg aria-hidden="true"><use href="#box" /></svg>
+              <h3>Retail & bulk formats</h3>
+              <p>Explore the listed sizes and ask about bulk requirements.</p>
+            </div>
+            <div>
+              <svg aria-hidden="true"><use href="#heart" /></svg>
+              <h3>Your enquiry, your way</h3>
+              <p>Save products, add your city and tell us what you need.</p>
+            </div>
+            <a href="/downloads/catalogue.pdf" download
+              >Download the 5 Fingers catalogue
+              <svg aria-hidden="true"><use href="#arrow" /></svg
+            ></a>
+          </div>
+        </section>
+        <section class="section wrap faq" id="faq" aria-labelledby="faq-title">
+          <div>
+            <span class="eyebrow">A FEW THINGS YOU MIGHT WONDER</span>
+            <h2 id="faq-title">
+              Good questions.<br /><span class="pink-text">Fresh answers.</span>
+            </h2>
+            <p>
+              Need a little more help?<br />We're happy to start a conversation.
+            </p>
+            <a class="text-link" href="#contact"
+              >Ask about our range
+              <svg aria-hidden="true"><use href="#arrow" /></svg
+            ></a>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>
+                What products does Farm Fresh offer?<span>+</span>
+              </summary>
+              <p>
+                Our range includes milk, plain and flavoured yogurts, Greek and
+                natural yogurt, cheese, salted and unsalted butter, bulk butter
+                formats and desi ghee. Browse the catalogue for available packs.
+              </p>
+            </details>
+            <details>
+              <summary>How do I choose a pack size?<span>+</span></summary>
+              <p>
+                Open any product to view its listed pack formats. Select a pack
+                and add it to your enquiry. Where a weight has not been
+                specified, you can ask our team about available sizes.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Can I place an order on this website?<span>+</span>
+              </summary>
+              <p>
+                This website currently helps you explore products and prepare an
+                enquiry. It does not take payments or confirm orders. Product
+                availability, pricing and delivery can be discussed with the
+                team once official contact channels are connected.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Do you work with shops and food businesses?<span>+</span>
+              </summary>
+              <p>
+                We welcome enquiries from retailers, distributors, wholesalers,
+                cafés, hotels and restaurants. Include your business type, city,
+                preferred products and quantities in your enquiry.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Where can I find ingredients and storage details?<span>+</span>
+              </summary>
+              <p>
+                Refer to the actual packaging for ingredients, allergens, expiry
+                and storage instructions for your specific product. For
+                additional product information, include your questions in an
+                enquiry.
+              </p>
+            </details>
+          </div>
+        </section>
+        <section
+          class="contact-section section"
+          id="contact"
+          aria-labelledby="contact-title"
+        >
+          <div class="wrap contact-grid">
+            <div class="contact-intro">
+              <span class="eyebrow">LET'S MAKE SOMETHING GOOD HAPPEN</span>
+              <h2 id="contact-title">
+                Say hello.<br /><span class="pink-text">Talk Farm Fresh.</span>
+              </h2>
+              <p>
+                Tell us about your favourite products, your business or what
+                you're looking for.
+              </p>
+              <div class="selected-box">
+                <div class="selection-heading">
+                  <h3>Your product selection</h3>
+                  <button type="button" id="clear-selection">Clear all</button>
+                </div>
+                <div id="saved-products"></div>
+              </div>
+              <address>
+                <strong>Our factory</strong><br />12 km Chichawatni Road,<br />Burewala,
+                Punjab, Pakistan.
+              </address>
+              <a
+                class="text-link"
+                href="https://fingers-v3.pages.dev/#locations"
+                >All 5 Fingers locations
+                <svg aria-hidden="true"><use href="#arrow" /></svg
+              ></a>
+            </div>
+            <div class="form-card">
+              <form id="enquiry-form">
+                <h3>A fresh conversation starts here.</h3>
+                <p class="form-note">
+                  Prepare your enquiry below. Official contact details are being
+                  finalised; this preview is not sent.
+                </p>
+                <div class="form-row">
+                  <label
+                    >Your name <span>*</span
+                    ><input
+                      name="name"
+                      required
+                      autocomplete="name"
+                      maxlength="100" /></label
+                  ><label
+                    >Email address <span>*</span
+                    ><input
+                      name="email"
+                      type="email"
+                      required
+                      autocomplete="email"
+                      maxlength="150"
+                  /></label>
+                </div>
+                <div class="form-row">
+                  <label
+                    >Business name<input
+                      name="business"
+                      autocomplete="organization"
+                      maxlength="150" /></label
+                  ><label
+                    >City<input
+                      name="city"
+                      autocomplete="address-level2"
+                      maxlength="100"
+                  /></label>
+                </div>
+                <label
+                  >How can we help? <span>*</span
+                  ><textarea
+                    name="message"
+                    rows="4"
+                    required
+                    maxlength="3000"
+                    placeholder="Products, pack sizes, quantities or a question…"
+                  ></textarea></label
+                ><button class="button purple" type="submit">
+                  Preview enquiry
+                  <svg aria-hidden="true"><use href="#arrow" /></svg></button
+                ><small
+                  >Your details stay in this browser. No message is sent
+                  automatically.</small
+                >
+              </form>
+              <section
+                id="enquiry-preview"
+                hidden
+                aria-live="polite"
+                tabindex="-1"
+              ></section>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <svg
+          class="section-wave top-wave"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 100"
+          aria-hidden="true"
+        >
+          <use href="#wave" />
+        </svg>
+        <div class="wrap footer-grid">
+          <div>
+            <a class="footer-logo" href="#home"
+              ><img
+                src="/assets/logo.webp"
+                alt="Farm Fresh home"
+                width="120"
+                height="110"
+            /></a>
+            <h2>A little fresh.<br /><span>A lot of happy.</span></h2>
+          </div>
+          <div>
+            <h3>Find your favourite</h3>
+            <a href="#catalogue" data-filter-link="Milk">Milk</a
+            ><a href="#catalogue" data-filter-link="Yogurt">Yogurt</a
+            ><a href="#catalogue" data-filter-link="Cheese">Cheese</a
+            ><a href="#catalogue" data-filter-link="Butter">Butter</a
+            ><a href="#catalogue" data-filter-link="Ghee">Desi ghee</a>
+          </div>
+          <div>
+            <h3>Around the table</h3>
+            <a href="#about">Our story</a><a href="#inspiration">Fresh ideas</a
+            ><a href="#business">For businesses</a><a href="#faq">FAQs</a
+            ><a href="#contact">Get in touch</a>
+          </div>
+          <div class="footer-family">
+            <span class="eyebrow light">ONE BIG FAMILY</span>
+            <h3>Meet 5 Fingers.</h3>
+            <p>
+              Discover the company and the brands behind your everyday
+              favourites.
+            </p>
+            <a class="button yellow" href="https://fingers-v3.pages.dev/"
+              >Visit 5 Fingers
+              <svg aria-hidden="true"><use href="#arrow" /></svg
+            ></a>
+          </div>
+        </div>
+        <div class="footer-bottom wrap">
+          <p>© 2026 5 Fingers Dairy Pvt. Ltd. · Farm Fresh</p>
+          <a href="/downloads/catalogue.pdf" download>Product catalogue ↗</a
+          ><span>Made for everyday moments.</span>
+        </div>
+      </footer>
+    </div>
+    <dialog id="product-dialog" aria-label="Product information">
+      <button
+        type="button"
+        id="close-product-dialog"
+        aria-label="Close product information"
+      >
+        ×
+      </button>
+      <div id="product-dialog-content"></div>
+    </dialog>
+  </body>
+</html>

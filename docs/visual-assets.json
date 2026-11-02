@@ -1,0 +1,51 @@
+{
+  "method": "Built-in image_gen",
+  "date": "2026-11-02",
+  "note": "Marketing serving suggestions generated from approved Farm Fresh product artwork; package labels retained as visual references.",
+  "assets": [
+    {
+      "id": "hero-strawberry",
+      "prompt": "Premium transparent hero cutout inspired by the supplied Milky Mix reference: giant clear glass of creamy pink strawberry yogurt topped with yogurt swirl, diced strawberries, a whole berry and red-white striped straw. Accompany it with the original Farm Fresh Strawberry Yogurt 250g tub, preserving exact label artwork, cow logo, colour and package proportions. Elegant white cream splash sweeping around the lower-left and behind the glass with isolated droplets and three fresh strawberries at its base. Photorealistic premium food campaign lighting. Square composition, complete objects visible. No backdrop, UI, new logo, added typography, rating, discount or claim. Genuine transparent alpha.",
+      "refs": [
+        "D:/Arslan Projects/5 Finger website Project/v3-final-version/public/assets/products/farm-fresh-strawberry-yogurt.webp",
+        "C:/Users/hasee/AppData/Local/Temp/codex-clipboard-d8580f6e-bd6a-43e8-ba6d-2ed7c7f4d42b.png"
+      ],
+      "transparent": true,
+      "original": "C:/Users/hasee/.codex/generated_images/01a19b3f-09d6-7603-9058-6fcc8d91d91e/exec-26790248-fb09-4f31-87b5-dd4dff7a44d8.png",
+      "activeWorkspaceSource": "work/generated/hero-strawberry-splash.png"
+    },
+    {
+      "id": "pairing-yogurts",
+      "prompt": "Use case: ads-marketing / compositing. Create a premium photorealistic serving pair cutout on genuine transparent background for a Farm Fresh website pink banner. Use supplied actual Farm Fresh Strawberry Yogurt 250g tub (image1) and Mango Yogurt 250g tub (image2), preserve their exact logo, package shape, label wording, pink and golden lids. Arrange two tall unbranded clear dessert glasses close together: one filled with thick creamy pink strawberry yogurt topped by white swirl, chopped berries and a strawberry, one filled with golden mango yogurt topped by yogurt swirl and fresh mango cubes. Place matching branded tubs at their bases, smaller but readable. A red-white striped paper straw in strawberry glass and simple spoon in mango glass. Attractive asymmetrical two-glass silhouette, slight height variation, creamy liquid splash accents only at lower base, isolated strawberries and mango cubes. Lighting commercial fresh-food studio quality with realistic texture and soft shadows. All elements complete, centered tightly with 5% breathing room. Landscape 3:2 composition. No background, no platforms, no extra text, no invented product claims, no discount labels. No packaging changes; unbranded serving glasses are serving suggestions. Transparent alpha.",
+      "refs": [
+        "D:/Arslan Projects/5 Finger website Project/v3-final-version/public/assets/products/farm-fresh-strawberry-yogurt.webp",
+        "D:/Arslan Projects/5 Finger website Project/v3-final-version/public/assets/products/farm-fresh-mango-yogurt.webp"
+      ],
+      "transparent": true,
+      "original": "C:\\Users\\hasee\\.codex\\generated_images\\01a19b3f-09d6-7603-9058-6fcc8d91d91e\\exec-96b2abc9-e57d-4cb5-8153-f2898aaadc47.png"
+    },
+    {
+      "id": "breakfast-story",
+      "prompt": "Use case: photorealistic-natural / branded food photography. Create a beautifully art-directed morning breakfast editorial photograph for the Farm Fresh dairy website. Landscape 3:2. Reproduce the three supplied Farm Fresh packages accurately: blue 1L milk pouch, Natural Yogurt 250g tub, Unsalted Butter 1kg box, exact cow logo blue white green packaging and legible original names, do not invent new label claims. Place these products naturally on a sunlit pale cream kitchen table, with a clear glass of milk, bowl of thick yogurt with strawberries, two slices of rustic toast with a small curl of butter on a wooden board, a casually folded linen napkin. Main packages in the rear middle, edible servings in foreground, overlapping composition with depth, organic relaxed layout. Warm soft window sunlight from left and subtle garden bokeh background, naturally imperfect food texture, cozy family breakfast atmosphere, premium real food photographer aesthetic. No people, no overlaid text, no typographic captions, no watermark, no additional brand. Entire milk pouch and packages visible within frame, don't crop their logos. Gentle shadows, authentic proportions, vibrant yet natural colours.",
+      "refs": [
+        "D:/Arslan Projects/5 Finger website Project/v3-final-version/public/assets/products/farm-fresh-milk-pouch.webp",
+        "D:/Arslan Projects/5 Finger website Project/v3-final-version/public/assets/products/farm-fresh-natural-yogurt.webp",
+        "D:/Arslan Projects/5 Finger website Project/v3-final-version/public/assets/products/farm-fresh-unsalted-butter.webp"
+      ],
+      "transparent": false,
+      "original": "C:\\Users\\hasee\\.codex\\generated_images\\01a19b3f-09d6-7603-9058-6fcc8d91d91e\\exec-f4b8fb6c-019f-4e7c-8b8b-578fe9339d74.png"
+    },
+    {
+      "id": "hero-mango",
+      "prompt": "Use case: precise-object-edit / compositing. Edit Image 1 into a MANGO version while preserving the EXACT dramatic composition, proportions and lighting: giant clear yogurt glass at left-center, small actual branded tub at bottom-right, white dairy splash arc behind and left with smooth droplets. Replace all pink strawberry yogurt inside glass and topping with luscious creamy GOLDEN-YELLOW MANGO yogurt. Topping is pale yellow yogurt swirl with glossy ripe mango cubes and a small fresh green mango leaf. Replace the red-white straw with yellow-white striped straw. Replace strawberries at base with a sliced ripe golden mango cheek and several mango cubes with green leaf. Completely replace the strawberry tub in image1 with the actual Farm Fresh Mango Yogurt 250g tub shown in Image2, retaining its exact Farm Fresh cow logo, golden yellow lid, yellow/orange colours, original Mango YOGURT wording and 250g. Tub must be faithful to Image2, no new invented label claims. Keep splash white, clean photorealistic glass, attractive rich food textures and even professional campaign light. No pink or red anywhere outside exact brand logo colours, no strawberries. Entire glass, straw, splash, tub and fruits fully visible. True transparent alpha background, no haze, no glow, no rectangular backdrop or typographic overlay. Square composition; clean natural antialiased cutout edges. This will sit on a Farm Fresh blue website hero. Preserve the original sense of indulgence and scale.",
+      "refs": [
+        "D:/Arslan Projects/5 Finger website Project/farm-fresh/work/generated/hero-strawberry-splash.png",
+        "D:/Arslan Projects/5 Finger website Project/v3-final-version/public/assets/products/farm-fresh-mango-yogurt.webp"
+      ],
+      "transparent": true,
+      "original": "C:\\Users\\hasee\\.codex\\generated_images\\01a19b3f-09d6-7603-9058-6fcc8d91d91e\\exec-8cf88426-4d1b-4800-8153-ff008ad5b3a9.png",
+      "activeWorkspaceSource": "work/generated/hero-mango.png"
+    }
+  ],
+  "primaryHero": "hero-mango"
+}

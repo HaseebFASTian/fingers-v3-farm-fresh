@@ -1,0 +1,457 @@
+/* Farm Fresh palette: logo blue, field green, sunshine yellow and warm cream.
+   Legacy colour-token names remain aliases so the shared layout needs no rewrite. */
+:root {
+  --brand-navy: #073a70;
+  --brand-blue: #116eac;
+  --brand-green: #19683d;
+  --brand-leaf: #bad89b;
+  --brand-yellow: #fbd154;
+  --brand-mist: #edf4ef;
+  --brand-border: #c8d7cf;
+  --purple: var(--brand-navy);
+  --violet: var(--brand-green);
+  --pink: var(--brand-yellow);
+  --rose: var(--brand-green);
+  --yellow: var(--brand-yellow);
+  --cream: #fffaf0;
+  --ink: #163c4c;
+  --muted: #51646a;
+  --paper: #fffef9;
+  --line: #dce4db;
+}
+
+body {
+  background: #e7ede5;
+  color: var(--ink);
+}
+:is(button, a, input, select, textarea, summary):focus-visible {
+  outline-color: var(--brand-blue);
+}
+:is(.hero, .pairing, .why-section, .business-banner, footer)
+  :is(button, a, input, select, textarea, summary):focus-visible {
+  outline-color: var(--yellow);
+}
+.eyebrow {
+  color: #426337;
+}
+.eyebrow.light {
+  color: #dcebdc;
+}
+.pink-text {
+  color: var(--brand-green);
+}
+.button.pink,
+.button.yellow {
+  background: var(--yellow);
+  color: var(--brand-navy);
+}
+.button.purple {
+  background: var(--brand-green);
+  color: var(--cream);
+}
+.button.pink:hover,
+.button.yellow:hover {
+  background: #ffe18a;
+}
+.button.purple:hover {
+  background: #11552f;
+}
+.button-circle {
+  background: #fff5cf;
+  color: var(--brand-navy);
+}
+.text-link {
+  color: var(--brand-green);
+  border-bottom-color: #aec8ad;
+}
+
+.hero {
+  background: var(--brand-navy);
+  color: var(--cream);
+}
+.hero:before {
+  background: #0c477f;
+}
+.hero-copy h1 {
+  color: var(--cream);
+}
+.hero-copy h1 span {
+  color: var(--yellow);
+}
+.hero-copy h2 {
+  color: var(--yellow);
+}
+.hero-copy p {
+  color: #e0edf3;
+}
+.hero-copy .family-link {
+  color: #d2e4ec;
+}
+.hero-copy .eyebrow.light {
+  color: #d8eaf0;
+}
+.family-link strong {
+  color: var(--cream);
+}
+.hero-product {
+  filter: drop-shadow(0 20px 22px #05294326);
+}
+.hero-blob {
+  background: var(--brand-leaf);
+}
+.hero-sun {
+  background: var(--yellow);
+}
+.hero-tag {
+  color: var(--brand-navy);
+  background: var(--cream);
+  box-shadow: 0 9px 20px #0c3b4316;
+}
+.hero-tag svg {
+  background: #e0efd4;
+  color: var(--brand-green);
+}
+.hero-tag.second svg {
+  background: #fff0bd;
+  color: #795b12;
+}
+.serving-note {
+  color: #d7eaf0;
+}
+.saved-link span {
+  background: var(--yellow);
+  color: var(--brand-navy);
+}
+
+.round-button {
+  border-color: #b0c9b1;
+  color: var(--brand-green);
+}
+.round-button:hover {
+  background: #e9f1dc;
+}
+.signature-card > div,
+.signature-card.strawberry > div {
+  background: #c9e5b1;
+}
+.signature-card.mango > div {
+  background: #ffdc75;
+}
+.signature-card.greek > div {
+  background: #b9dfee;
+}
+.signature-card.natural > div {
+  background: #f3edcd;
+}
+.signature-card.milky > div {
+  background: #d7eaf4;
+}
+.signature-card.sweet > div {
+  background: #b1d3a1;
+}
+.signature-card > div > span,
+.signature-card.sweet > div > span {
+  color: var(--brand-navy);
+}
+.signature-card.strawberry h3,
+.signature-card.natural h3,
+.signature-card.sweet h3 {
+  color: var(--brand-green);
+}
+.signature-card.mango h3,
+.signature-card.milky h3 {
+  color: var(--brand-navy);
+}
+.signature-card.greek h3 {
+  color: #0e567a;
+}
+
+.pairing {
+  background: #247345;
+}
+.pairing:after {
+  background: #ffffff16;
+}
+.pairing .eyebrow,
+.pairing p {
+  color: #e8f1df;
+}
+.pairing h2 {
+  color: var(--cream);
+  text-shadow: none;
+}
+.pairing .button {
+  background: var(--yellow);
+  color: var(--brand-navy);
+}
+.pairing .button:hover {
+  background: #ffe18a;
+}
+.pairing-stamp {
+  background: var(--yellow);
+  color: var(--brand-navy);
+}
+.why-section {
+  background: var(--brand-green);
+  color: var(--cream);
+}
+.reason-grid > div {
+  background: var(--cream);
+  color: var(--brand-navy);
+}
+.reason-grid > div:nth-child(2) {
+  background: #deedf4;
+}
+.reason-grid > div:nth-child(3) {
+  background: #fff0c5;
+}
+.reason-grid > div:nth-child(4) {
+  background: #e2efcf;
+}
+.reason-grid svg {
+  color: var(--brand-green);
+}
+.reason-grid p {
+  color: #435c59;
+}
+
+.category-grid a,
+.category-grid .cat-milk {
+  background: #e1eff7;
+}
+.category-grid .cat-yogurt {
+  background: #dfedcf;
+}
+.category-grid .cat-cheese {
+  background: #ffe8b6;
+}
+.category-grid .cat-butter {
+  background: #fff2cd;
+}
+.category-grid .cat-ghee {
+  background: #e4efd4;
+}
+.category-grid h3 {
+  color: var(--brand-navy);
+}
+.catalogue-section {
+  background: #f2f6ef;
+}
+#category-filters button {
+  border-color: var(--brand-border);
+  color: var(--brand-navy);
+}
+#category-filters button[aria-pressed="true"] {
+  background: var(--brand-green);
+  color: var(--cream);
+  border-color: var(--brand-green);
+}
+.search-label {
+  border-color: var(--brand-border);
+  background: var(--paper);
+}
+.search-label input {
+  color: var(--ink);
+}
+.search-label input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+.product-card {
+  border-color: #dce5db;
+}
+.product-card:hover {
+  box-shadow: 0 10px 24px #0c3d4a14;
+}
+.product-photo,
+.product-card[data-category="Yogurt"] .product-photo {
+  background: #e6efdd;
+}
+.product-card[data-category="Milk"] .product-photo {
+  background: #e7f1fa;
+}
+.product-card[data-category="Cheese"] .product-photo {
+  background: #fff0d6;
+}
+.product-card[data-category="Butter"] .product-photo {
+  background: #faf1ce;
+}
+.product-card[data-category="Ghee"] .product-photo {
+  background: #eaf1e1;
+}
+.save-product {
+  border-color: #d7e3d6;
+  color: var(--brand-green);
+  background: var(--paper);
+}
+.save-product[aria-pressed="true"] {
+  background: var(--yellow);
+  border-color: #d1aa34;
+}
+.save-product[aria-pressed="true"] svg {
+  fill: var(--brand-green);
+}
+.product-category {
+  color: var(--brand-green);
+}
+.product-body h3 {
+  color: var(--brand-navy);
+}
+.product-details {
+  background: #e5eff7;
+  color: var(--brand-navy);
+}
+.product-details:hover {
+  background: var(--brand-navy);
+  color: var(--cream);
+}
+.empty-products {
+  border-color: #adc4ac;
+}
+.empty-products .button {
+  background: var(--brand-green);
+  color: var(--cream);
+}
+
+.cheese-banner {
+  background: #ffe395;
+}
+.cheese-banner h2 {
+  color: var(--brand-navy);
+}
+.cheese-banner h2 span {
+  color: var(--brand-green);
+}
+.cheese-banner p {
+  color: #43544a;
+}
+.cheese-orbit {
+  background: #fff0bd;
+}
+.story-stamp {
+  background: var(--yellow);
+  color: var(--brand-navy);
+}
+.inspiration {
+  background: #fff9e9;
+}
+.ideas-grid article {
+  border-color: #e8e4ce;
+}
+.ideas-grid h3 {
+  color: var(--brand-navy);
+}
+.ideas-grid details a {
+  color: var(--brand-green);
+}
+.business-banner {
+  background: var(--brand-navy);
+  color: var(--cream);
+}
+.business-banner p {
+  color: #e0edf3;
+}
+.business-notes > div > svg {
+  color: var(--yellow);
+}
+.business-notes > a {
+  color: var(--yellow);
+}
+.faq-list summary span {
+  background: #e6efdd;
+  color: var(--brand-green);
+}
+
+.contact-section {
+  background: var(--brand-mist);
+}
+.selected-box {
+  border-block-color: var(--brand-border);
+}
+.saved-product button {
+  border-color: #b7ccc2;
+  color: var(--brand-navy);
+}
+.form-card input,
+.form-card textarea {
+  border-color: var(--brand-border);
+  background: #fbfdf9;
+}
+.form-card input::placeholder,
+.form-card textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+#preview-text {
+  background: #eff5ed;
+  color: var(--ink);
+}
+.preview-actions button {
+  background: var(--brand-green);
+  color: var(--cream);
+}
+.preview-actions button:first-child {
+  background: var(--yellow);
+  color: var(--brand-navy);
+}
+
+footer {
+  background: var(--brand-navy);
+  color: var(--cream);
+}
+footer .top-wave {
+  fill: var(--brand-mist);
+}
+.footer-grid h2 span {
+  color: var(--yellow);
+}
+.footer-grid > div > a:not(.footer-logo):not(.button),
+.footer-family p {
+  color: #dceaf1;
+}
+.footer-grid > div > a:not(.footer-logo):not(.button):hover {
+  color: var(--yellow);
+}
+.footer-family .eyebrow.light {
+  color: #d1e5e8;
+}
+.footer-bottom {
+  color: #c7dde7;
+}
+
+dialog {
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 0 35px 100px #05294350;
+}
+dialog::backdrop {
+  background: #092c43bb;
+}
+#close-product-dialog {
+  background: #e7efdf;
+  color: var(--brand-navy);
+}
+.detail-visual {
+  background: #edf3e6;
+}
+.detail-copy select {
+  border-color: var(--brand-border);
+  color: var(--brand-navy);
+}
+#add-product {
+  background: var(--brand-green);
+  color: var(--cream);
+}
+.site-notification {
+  background: var(--brand-navy);
+  color: var(--cream);
+  border-color: #5d8ca9;
+  box-shadow: 0 10px 30px #073a7022;
+}
+
+@media (max-width: 760px) {
+  #navigation {
+    background: #0b477d;
+    border-color: #39749b;
+  }
+}

@@ -195,25 +195,14 @@ body {
   background: var(--brand-green);
   color: var(--cream);
 }
-.reason-grid > div {
+.reason-card {
   background: var(--cream);
   color: var(--brand-navy);
 }
-.reason-grid > div:nth-child(2) {
-  background: #deedf4;
-}
-.reason-grid > div:nth-child(3) {
-  background: #fff0c5;
-}
-.reason-grid > div:nth-child(4) {
-  background: #e2efcf;
-}
-.reason-grid svg {
-  color: var(--brand-green);
-}
-.reason-grid p {
-  color: #435c59;
-}
+.reason-packshot { background: #e4edf0; }
+.reason-card p { color: #435c59; }
+.reason-link { color: var(--brand-green); border-top: 1px solid #d8e2d3; }
+.reason-card:focus-visible { outline-color: var(--yellow); }
 
 .category-grid a,
 .category-grid .cat-milk {

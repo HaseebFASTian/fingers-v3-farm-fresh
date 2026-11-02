@@ -1,7 +1,7 @@
 /* Keep the complete opening composition inside a single viewport. */
 .hero {
   --header-height: 142px;
-  height: min(820px, calc(100svh - 48px));
+  height: min(820px, 100svh);
   min-height: 0;
 }
 .site-header {

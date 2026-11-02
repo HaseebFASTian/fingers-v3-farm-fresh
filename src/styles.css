@@ -510,6 +510,31 @@ summary:focus-visible {
 .signature {
   padding-top: 48px;
 }
+.signature > .section-top {
+  display: grid;
+  grid-template-columns: minmax(104px, 1fr) minmax(0, 820px) minmax(104px, 1fr);
+  text-align: center;
+}
+.signature > .section-top > div:first-child {
+  grid-column: 2;
+}
+.signature .carousel-buttons {
+  grid-column: 3;
+  justify-self: end;
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .signature > .section-top {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 20px;
+  }
+  .signature > .section-top > div:first-child,
+  .signature .carousel-buttons {
+    grid-column: 1;
+    justify-self: center;
+  }
+}
 .carousel-buttons {
   display: flex;
   gap: 10px;

@@ -814,14 +814,8 @@ summary:focus-visible {
   object-fit: contain;
 }
 .category-grid h3 {
-  display: flex;
-  justify-content: space-between;
   font-size: 25px;
-  align-items: center;
   margin-top: 10px;
-}
-.category-grid h3 span {
-  font: 400 22px Outfit;
 }
 .catalogue-section {
   background: #f8f4fb;
@@ -1958,9 +1952,6 @@ dialog::backdrop {
   }
   .category-grid h3 {
     font-size: 22px;
-  }
-  .category-grid h3 span {
-    font-size: 16px;
   }
   .catalogue-toolbar {
     gap: 16px;

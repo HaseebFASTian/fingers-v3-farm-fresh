@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <meta name="theme-color" content="#073a70" />
     <title>Farm Fresh — A little fresh. A lot of happy.</title>
     <meta
@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="/src/brand-colors.css" />
     <link rel="stylesheet" href="/src/hero-layout.css" />
     <link rel="stylesheet" href="/src/typography.css" />
+    <link rel="stylesheet" href="/src/mobile.css" />
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
@@ -78,12 +79,25 @@
       <symbol id="sparkle" viewBox="0 0 24 24">
         <path d="m12 1 3.5 7.5L23 12l-7.5 3.5L12 23l-3.5-7.5L1 12l7.5-3.5Z" />
       </symbol>
+      <symbol id="home-icon" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3V10Zm6 10v-7h6v7" /></symbol>
+      <symbol id="grid-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+      <symbol id="chat-icon" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 9 10 10 0 0 1-4-.9L3 21l1.4-4.8A9 9 0 1 1 21 11.5ZM8 9h8m-8 5h5"/></symbol>
+      <symbol id="help-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4m0 3v.2"/></symbol>
+      <symbol id="close-icon" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
       <symbol id="wave" viewBox="0 0 1440 100">
         <path
           d="M0 45C90 5 130 110 250 60S400 15 500 55s160 25 230-15 120 60 220 30 150-65 250-10 180 15 240-20V100H0Z"
         />
       </symbol>
     </svg>
+    <header class="mobile-app-header">
+      <a class="mobile-brand" href="#home" aria-label="Farm Fresh home"><img src="/assets/logo.webp" width="112" height="104" alt="Farm Fresh" /></a>
+      <span class="mobile-brand-note">A little fresh.<br /><strong>A lot of happy.</strong></span>
+      <div class="mobile-header-actions">
+        <a href="#catalogue" aria-label="Browse Farm Fresh products"><svg aria-hidden="true"><use href="#search" /></svg></a>
+        <button id="open-mobile-menu" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </header>
     <div class="page-shell">
       <main id="main">
         <section class="hero" id="home" aria-labelledby="hero-title">
@@ -111,14 +125,7 @@
               ><a class="button yellow header-cta" href="#catalogue"
                 >Explore our range
                 <svg aria-hidden="true"><use href="#arrow" /></svg></a
-              ><button
-                class="menu-toggle"
-                aria-controls="navigation"
-                aria-expanded="false"
-                aria-label="Open navigation"
               >
-                <span></span><span></span><span></span>
-              </button>
             </div>
           </header>
           <div class="hero-inner wrap">
@@ -176,10 +183,10 @@
             <div>
               <span class="eyebrow">A FLAVOUR FOR YOUR MOOD</span>
               <h2 id="favourites-title">
-                Our everyday<br /><span class="pink-text">happy makers.</span>
+                Our everyday<br /> <span class="pink-text">happy makers.</span>
               </h2>
               <p>
-                Creamy, fruity or simply classic.<br />Which one feels like you?
+                Creamy, fruity or simply classic.<br /> Which one feels like you?
               </p>
             </div>
             <div class="carousel-buttons">
@@ -213,7 +220,7 @@
                   loading="lazy"
                 />
               </div>
-              <h3>Strawberry<br />sweetness</h3>
+              <h3>Strawberry<br /> sweetness</h3>
               <p>Strawberry Yogurt · 250 g</p></a
             >
             <a
@@ -230,7 +237,7 @@
                   loading="lazy"
                 />
               </div>
-              <h3>Mango<br />magic</h3>
+              <h3>Mango<br /> magic</h3>
               <p>Mango Yogurt · 250 g</p></a
             >
             <a
@@ -247,7 +254,7 @@
                   loading="lazy"
                 />
               </div>
-              <h3>Go a little<br />Greek</h3>
+              <h3>Go a little<br /> Greek</h3>
               <p>Greek Yogurt · 250 g</p></a
             >
             <a
@@ -264,7 +271,7 @@
                   loading="lazy"
                 />
               </div>
-              <h3>Simply<br />natural</h3>
+              <h3>Simply<br /> natural</h3>
               <p>Natural Yogurt · 250 g</p></a
             >
             <a
@@ -281,7 +288,7 @@
                   loading="lazy"
                 />
               </div>
-              <h3>Milky<br />mornings</h3>
+              <h3>Milky<br /> mornings</h3>
               <p>Milk Pouch · 1 L</p></a
             ><a
               class="signature-card sweet"
@@ -297,7 +304,7 @@
                   loading="lazy"
                 />
               </div>
-              <h3>Sweet<br />little moments</h3>
+              <h3>Sweet<br /> little moments</h3>
               <p>Sweet Yogurt · 400 g</p></a
             >
           </div>
@@ -390,6 +397,7 @@
           </svg>
         </section>
         <section
+          id="categories"
           class="section wrap categories"
           aria-labelledby="categories-title"
         >
@@ -480,6 +488,7 @@
             </div>
             <p id="product-count" class="product-count" aria-live="polite"></p>
             <div id="product-grid" class="product-grid"></div>
+            <button id="show-more-products" class="button mobile-load-more" type="button" hidden>Show more products</button>
             <noscript
               ><p>
                 Enable JavaScript to browse products, or
@@ -765,7 +774,7 @@
               <p>
                 Tell us about your business, favourite products or questions.
               </p>
-              <div class="selected-box">
+              <div class="selected-box" id="mobile-selection">
                 <div class="selection-heading">
                   <h3>Your product selection</h3>
                   <button type="button" id="clear-selection">Clear all</button>
@@ -901,6 +910,30 @@
         </div>
       </footer>
     </div>
+    <nav class="mobile-bottom-nav" aria-label="Quick navigation">
+      <a href="#home" data-mobile-destination aria-current="location"><span class="nav-symbol"><svg aria-hidden="true"><use href="#home-icon" /></svg></span><span>Home</span></a>
+      <a href="#catalogue" data-mobile-destination><span class="nav-symbol"><svg aria-hidden="true"><use href="#grid-icon" /></svg></span><span>Products</span></a>
+      <a href="#contact" data-mobile-destination><span class="nav-symbol"><svg aria-hidden="true"><use href="#heart" /></svg><span class="nav-badge" data-selection-count>0</span></span><span>Saved</span></a>
+      <a href="#inspiration" data-mobile-destination><span class="nav-symbol"><svg aria-hidden="true"><use href="#sun" /></svg></span><span>Ideas</span></a>
+    </nav>
+    <dialog id="mobile-menu" class="mobile-drawer" aria-labelledby="mobile-menu-title">
+      <div class="drawer-head">
+        <img src="/assets/logo.webp" width="112" height="104" alt="Farm Fresh" />
+        <button id="close-mobile-menu" type="button" aria-label="Close menu"><svg aria-hidden="true"><use href="#close-icon" /></svg></button>
+      </div>
+      <div class="drawer-intro"><p class="eyebrow">A LITTLE FRESH. A LOT OF HAPPY.</p><h2 id="mobile-menu-title">Make yourself at home.</h2></div>
+      <nav class="drawer-links" aria-label="Mobile navigation">
+        <a href="#home" data-mobile-destination><svg aria-hidden="true"><use href="#home-icon" /></svg><span>Home</span></a>
+        <a href="#catalogue" data-mobile-destination><svg aria-hidden="true"><use href="#grid-icon" /></svg><span>Our products</span></a>
+        <a href="#categories" data-mobile-destination><svg aria-hidden="true"><use href="#box" /></svg><span>Browse categories</span></a>
+        <a href="#about" data-mobile-destination><svg aria-hidden="true"><use href="#leaf" /></svg><span>Our story</span></a>
+        <a href="#inspiration" data-mobile-destination><svg aria-hidden="true"><use href="#sun" /></svg><span>Fresh ideas</span></a>
+        <a href="#business" data-mobile-destination><svg aria-hidden="true"><use href="#box" /></svg><span>For businesses</span></a>
+        <a href="#faq" data-mobile-destination><svg aria-hidden="true"><use href="#help-icon" /></svg><span>Help & FAQs</span></a>
+        <a href="#contact" data-mobile-destination><svg aria-hidden="true"><use href="#chat-icon" /></svg><span>Let's talk</span></a>
+      </nav>
+      <a class="drawer-family" href="https://fingers-v3.pages.dev/"><span>PART OF THE FAMILY</span><strong>Meet 5 Fingers Dairy</strong></a>
+    </dialog>
     <dialog id="product-dialog" aria-label="Product information">
       <button
         type="button"

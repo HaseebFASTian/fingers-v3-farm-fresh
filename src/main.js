@@ -1,4 +1,5 @@
 import { products } from "./products.js";
+import { initMobileUI, closeMobileDialog, lockMobileScroll, unlockMobileScroll } from "./mobile.js";
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [
@@ -20,7 +21,25 @@ const closeIcon =
   '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>';
 const state = { category: "All", query: "" };
 const selectedProducts = new Map();
+const selectionStorageKey = "farm-fresh-selection-v1";
+try {
+  const saved = JSON.parse(sessionStorage.getItem(selectionStorageKey) || "[]");
+  if (Array.isArray(saved)) {
+    for (const entry of saved) {
+      if (!Array.isArray(entry)) continue;
+      const [id, packIndex] = entry;
+      const product = products.find((item) => item.id === id);
+      if (product && Number.isInteger(packIndex) && packIndex >= 0 && packIndex < product.packs.length) {
+        selectedProducts.set(id, packIndex);
+      }
+    }
+  }
+} catch { /* Private-browsing storage restrictions must not block the catalogue. */ }
 const grid = $("#product-grid");
+const showMoreProducts = $("#show-more-products");
+const mobileCatalogue = matchMedia("(max-width: 760px)");
+const productBatchSize = 8;
+let productLimit = productBatchSize;
 const dialog = $("#product-dialog");
 const form = $("#enquiry-form");
 const preview = $("#enquiry-preview");
@@ -83,19 +102,49 @@ function matchingProducts() {
         ).includes(query)),
   );
 }
+function updateProductSummary(matched, visibleCount) {
+  const remaining = matched.length - visibleCount;
+  $("#product-count").textContent = remaining > 0
+    ? `Showing ${visibleCount} of ${matched.length} products`
+    : `${matched.length} ${matched.length === 1 ? "product" : "products"}${state.category === "All" ? " in our range" : ` in ${state.category.toLowerCase()}`}`;
+  if (showMoreProducts) {
+    showMoreProducts.hidden = !mobileCatalogue.matches || remaining <= 0;
+    showMoreProducts.textContent = `Show ${Math.min(productBatchSize, remaining)} more products`;
+  }
+}
 function renderProducts() {
+  productLimit = productBatchSize;
   const matched = matchingProducts();
-  grid.innerHTML = matched.length
-    ? matched.map(card).join("")
+  const visible = mobileCatalogue.matches && showMoreProducts ? matched.slice(0, productLimit) : matched;
+  grid.innerHTML = visible.length
+    ? visible.map(card).join("")
     : '<div class="empty-products"><h3>No matches just yet.</h3><p>Try a different product, pack size or category.</p><button type="button" class="button" data-reset-products>Show all products</button></div>';
-  $("#product-count").textContent =
-    `${matched.length} ${matched.length === 1 ? "product" : "products"}${state.category === "All" ? " in our range" : ` in ${state.category.toLowerCase()}`}`;
+  updateProductSummary(matched, visible.length);
   $$("#category-filters [data-category]").forEach((button) => {
     const active = button.dataset.category === state.category;
     button.classList.toggle("active", active);
     button.setAttribute("aria-pressed", String(active));
   });
 }
+showMoreProducts?.addEventListener("click", () => {
+  if (!mobileCatalogue.matches) return;
+  const matched = matchingProducts();
+  const previousLimit = productLimit;
+  productLimit = Math.min(productLimit + productBatchSize, matched.length);
+  const added = matched.slice(previousLimit, productLimit);
+  // Append to preserve existing heart state, focus and loaded artwork.
+  grid.insertAdjacentHTML("beforeend", added.map(card).join(""));
+  updateProductSummary(matched, productLimit);
+  if (added.length) {
+    const nextProduct = grid.children[previousLimit]?.querySelector(".product-preview");
+    nextProduct?.focus({ preventScroll: true });
+    const bounds = nextProduct?.getBoundingClientRect();
+    if (bounds && (bounds.top < 96 || bounds.bottom > innerHeight - 80)) {
+      nextProduct.scrollIntoView({ behavior: reducedMotion() ? "instant" : "smooth", block: "start" });
+    }
+  }
+});
+mobileCatalogue.addEventListener("change", renderProducts);
 
 function refreshSaveButtons() {
   $$("[data-save]").forEach((button) => {
@@ -110,6 +159,13 @@ function refreshSaveButtons() {
 }
 function renderSelection() {
   $("#saved-count").textContent = String(selectedProducts.size);
+  $$("[data-selection-count]").forEach((badge) => {
+    badge.textContent = String(selectedProducts.size);
+    badge.hidden = selectedProducts.size === 0;
+  });
+  try {
+    sessionStorage.setItem(selectionStorageKey, JSON.stringify([...selectedProducts]));
+  } catch { /* Selection still works in memory if browser storage is unavailable. */ }
   $("#clear-selection").hidden = !selectedProducts.size;
   $("#saved-products").innerHTML = selectedProducts.size
     ? [...selectedProducts]
@@ -148,13 +204,20 @@ function openProduct(id, trigger) {
   $("#product-dialog-content").innerHTML =
     `<div class="detail-layout"><div class="detail-visual"><img src="${product.image}" alt="${escapeHTML(product.imageAlt)}" width="768" height="768"/></div><div class="detail-copy"><span class="eyebrow">Farm Fresh · ${escapeHTML(product.category)}</span><h2 id="product-dialog-title">${escapeHTML(product.name)}</h2><p>${escapeHTML(intro)}</p><label for="pack-select">Choose your pack</label><select id="pack-select">${product.packs.map((pack, index) => `<option value="${index}"${selectedProducts.get(id) === index ? " selected" : ""}>${escapeHTML(packLabel(pack))}</option>`).join("")}</select><button type="button" class="button button-primary" id="add-product">Add to enquiry list ${arrow}</button><p class="detail-note">Catalogue-based product illustration. Packaging may vary by pack size. Please check the pack for ingredients and storage instructions.</p></div></div>`;
   dialog.setAttribute("aria-labelledby", "product-dialog-title");
+  dialog.classList.remove("is-closing");
+  lockMobileScroll(dialog);
   dialog.showModal();
   document.body.classList.add("dialog-open");
   $("#close-product-dialog").focus();
 }
-$("#close-product-dialog").addEventListener("click", () => dialog.close());
+$("#close-product-dialog").addEventListener("click", () => closeMobileDialog(dialog));
+dialog.addEventListener("cancel", (event) => {
+  event.preventDefault();
+  closeMobileDialog(dialog);
+});
 dialog.addEventListener("close", () => {
   document.body.classList.remove("dialog-open");
+  unlockMobileScroll(dialog);
   if (detailTrigger?.isConnected) detailTrigger.focus({ preventScroll: true });
 });
 dialog.addEventListener("click", (event) => {
@@ -166,7 +229,7 @@ dialog.addEventListener("click", (event) => {
       event.clientY < bounds.top ||
       event.clientY > bounds.bottom
     )
-      dialog.close();
+      closeMobileDialog(dialog);
   }
   if (event.target.closest("#add-product") && detailProduct) {
     selectedProducts.set(detailProduct.id, Number($("#pack-select").value));
@@ -174,7 +237,7 @@ dialog.addEventListener("click", (event) => {
     announce(
       `${detailProduct.name} and your selected pack added to the enquiry list.`,
     );
-    dialog.close();
+    closeMobileDialog(dialog);
   }
 });
 
@@ -265,40 +328,6 @@ preview.addEventListener("click", (event) => {
   }
 });
 
-const menuToggle = $(".menu-toggle");
-const navigation = $("#navigation");
-function closeMenu() {
-  menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.setAttribute("aria-label", "Open menu");
-  navigation.classList.remove("open");
-}
-menuToggle.addEventListener("click", () => {
-  const isOpen = menuToggle.getAttribute("aria-expanded") !== "true";
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-  navigation.classList.toggle("open", isOpen);
-});
-navigation.addEventListener("click", (event) => {
-  if (event.target.closest("a")) closeMenu();
-});
-document.addEventListener("click", (event) => {
-  if (
-    !event.target.closest("#navigation") &&
-    !event.target.closest(".menu-toggle")
-  )
-    closeMenu();
-});
-document.addEventListener("keydown", (event) => {
-  if (
-    event.key === "Escape" &&
-    menuToggle.getAttribute("aria-expanded") === "true"
-  ) {
-    closeMenu();
-    menuToggle.focus();
-  }
-});
-matchMedia("(min-width: 901px)").addEventListener("change", closeMenu);
-
 const signatureTrack = $("#signature-track");
 if (signatureTrack) {
   function moveSignature(direction) {
@@ -330,3 +359,4 @@ if (signatureTrack) {
 
 renderProducts();
 renderSelection();
+initMobileUI();

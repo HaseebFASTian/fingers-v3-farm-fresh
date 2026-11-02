@@ -467,3 +467,18 @@ dialog::backdrop {
     border: 1px solid #39749b;
   }
 }
+:root {
+  --app-blue: #073a70;
+  --app-ink: #073a70;
+  --app-white: #fffef9;
+  --app-green: #19683d;
+  --app-sun: #fbd154;
+  --app-blue-light: #cce1f0;
+  --app-blue-wash: #e8f2f8;
+  --app-green-wash: #edf4e6;
+  --app-line: #dce5db;
+  --app-light-line: #ffffff24;
+  --app-light-tint: #ffffff10;
+  --app-shadow: #073a7012;
+  --app-scrim: #082a48a8;
+}

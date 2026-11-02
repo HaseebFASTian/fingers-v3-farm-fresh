@@ -65,7 +65,7 @@ function card(product) {
       <img src="${product.image}" alt="${escapeHTML(product.imageAlt)}" width="768" height="768" loading="lazy" decoding="async"/>
       <button class="save-product" type="button" data-save="${product.id}" aria-label="${isSelected ? "Remove" : "Add"} ${escapeHTML(product.name)} ${isSelected ? "from" : "to"} enquiry list" aria-pressed="${isSelected}">${heart}</button>
     </div>
-    <div class="product-body"><span class="product-category">${escapeHTML(product.category)}</span><h3>${escapeHTML(product.name)}</h3><p class="product-pack">${escapeHTML(packSummary(product))}</p><button class="product-details" type="button" data-product="${product.id}" aria-label="View ${escapeHTML(product.name)} details">View product ${arrow}</button></div>
+    <div class="product-body"><span class="product-category">${escapeHTML(product.category)}</span><h3>${escapeHTML(product.name)}</h3><p class="product-pack">${escapeHTML(packSummary(product))}</p><button class="product-details" type="button" data-product="${product.id}" aria-label="View ${escapeHTML(product.name)} details">Details ${arrow}</button></div>
   </article>`;
 }
 

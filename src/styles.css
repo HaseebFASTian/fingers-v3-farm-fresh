@@ -1021,6 +1021,7 @@ summary:focus-visible {
 }
 .story-photo > img {
   width: 100%;
+  height: auto;
   aspect-ratio: 1.05;
   object-fit: cover;
   border-radius: 44px 90px 44px 44px;
